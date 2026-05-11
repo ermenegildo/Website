@@ -1,38 +1,92 @@
-<section class="hero">
-    <div class="hero-content">
-        <h1 class="hero-title">
-            Translating <br>
-            <span class="thin-text">complexity</span> <br>
-            into <span class="gradient-text">clarity.</span>
-        </h1>
-        <p class="hero-experience">16 YEARS OF EXPERIENCE IN DESIGN</p>
-        
-        <div class="hero-cta-container">
-            <a href="https://www.linkedin.com/in/damianomeneghetti/" target="_blank" class="btn-premium">
-                Connect on LinkedIn <span class="arrow">↗</span>
-            </a>
-        </div>
-    </div>
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-</section>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAMIANO MENEGHETTI | Design Strategy & Systems</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-main">
 
-<section class="practice-section">
-    <div class="container">
-        <div class="practice-grid">
-            <div class="practice-label">My Practice</div>
-            <div class="practice-content">
-                <h2 class="practice-text">
-                    My practice merges <span class="highlight">strategy</span>, interaction design, 
-                    cognitive psychology, and empirical research to transform 
-                    <span class="thin-italic">complex systems</span> into elegant experiences.
-                </h2>
-                <h3 class="practice-subtext">
-                    I focus on designing products that are not only functional, but 
-                    <span class="emotion">emotionally intuitive</span> — interfaces that users 
-                    understand before they even think about them.
-                </h3>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <header class="header">
+        <div class="logo">D.M.</div>
+        <nav class="nav-links">
+            <a href="#about">About</a>
+            <a href="https://www.linkedin.com/in/damianomeneghetti/" target="_blank">LinkedIn</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Translating <br>
+                    <span class="thin-text">complexity</span> <br>
+                    into <span class="gradient-text">clarity.</span>
+                </h1>
+                <p class="hero-experience">16 YEARS OF STRATEGIC DESIGN EXCELLENCE</p>
+                <div class="hero-cta">
+                    <a href="https://www.linkedin.com/in/damianomeneghetti/" target="_blank" class="btn-premium">
+                        Connect <span class="arrow">↗</span>
+                    </a>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+        </section>
+
+        <section class="practice-section">
+            <div class="container">
+                <h2 class="practice-main-text reveal">
+                    My practice merges <strong>strategy</strong>, <strong>interaction design</strong>, and <strong>cognitive psychology</strong> to transform complex systems into elegant, high-impact experiences.
+                </h2>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="about-grid">
+                <div class="about-left">
+                    <p class="section-tag">About Me</p>
+                    <h2 class="about-hi">Hi, I’m Damiano.</h2>
+                    <p class="about-bio">
+                        I design digital experiences that <strong>simplify complexity without sacrificing sophistication.</strong> 
+                        My work exists at the intersection of human behavior, product strategy, and emerging technology.
+                    </p>
+                    <div class="status-card">
+                        <span class="pulse"></span>
+                        Currently designing the future of autonomous optimization at <strong>Akamas</strong>.
+                    </div>
+                </div>
+
+                <div class="about-right">
+                    <div class="philosophy-card">
+                        <h3>Designing Beyond Interfaces</h3>
+                        <p>Modern products are no longer static tools; they are <strong>living systems</strong> shaped by behavior, data, and emotion.</p>
+                        <ul class="values-list">
+                            <li><span>01</span> Intuitive</li>
+                            <li><span>02</span> Intelligent</li>
+                            <li><span>03</span> Frictionless</li>
+                            <li><span>04</span> Emotionally Coherent</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Smooth Scroll
+        const lenis = new Lenis();
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+
+        // Cursor Logic
+        const cursor = document.querySelector('.cursor');
+        const follower = document.querySelector('.cursor-follower
