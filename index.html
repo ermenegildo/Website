@@ -8,9 +8,157 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- CORE STYLES --- */
+        :root {
+            --black: #05050a;
+            --white: #ffffff;
+            --accent: #ff007f;
+            --gray: #888;
+            --font-hero: 'Syne', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--black);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            cursor: none; /* Nasconde il mouse per il tracker */
+        }
+
+        /* MOUSE TRACKER */
+        .cursor {
+            width: 8px;
+            height: 8px;
+            background: var(--white);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 10000;
+        }
+
+        .cursor-follower {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-16px, -16px);
+        }
+
+        /* HEADER */
+        .header {
+            position: fixed;
+            top: 0; width: 100%;
+            padding: 30px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo { font-family: var(--font-hero); font-weight: 800; font-size: 1.2rem; }
+        .nav-links a { color: var(--white); text-decoration: none; margin-left: 30px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.7; transition: 0.3s; }
+        .nav-links a:hover { opacity: 1; color: var(--accent); }
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-title {
+            font-family: var(--font-hero);
+            font-size: clamp(2.5rem, 10vw, 7.5rem);
+            font-weight: 800;
+            line-height: 0.9;
+            text-transform: uppercase;
+            letter-spacing: -3px;
+        }
+
+        .thin-text { font-weight: 400; font-style: italic; -webkit-text-stroke: 1px var(--white); color: transparent; }
+        .gradient-text { background: linear-gradient(90deg, var(--accent), #00e5ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        .hero-experience { font-size: 0.7rem; letter-spacing: 5px; margin-top: 30px; color: var(--gray); }
+
+        .btn-premium {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 18px 40px;
+            border: 1px solid white;
+            border-radius: 100px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .btn-premium:hover { background: white; color: black; transform: translateY(-5px); }
+
+        /* DECORATIVE BLOBS */
+        .blob { position: absolute; border-radius: 50%; filter: blur(100px); z-index: -1; opacity: 0.25; }
+        .blob-1 { width: 300px; height: 300px; background: var(--accent); top: 15%; left: 10%; }
+        .blob-2 { width: 450px; height: 450px; background: #0047ff; bottom: 10%; right: 5%; }
+
+        /* PRACTICE SECTION */
+        .practice-section { padding: 200px 10%; background: #07070e; }
+        .practice-main-text {
+            font-family: var(--font-hero);
+            font-size: clamp(1.8rem, 4vw, 3.5rem);
+            line-height: 1.1;
+            font-weight: 400;
+            color: #999;
+        }
+        .practice-main-text strong { color: var(--white); font-weight: 800; }
+
+        /* ABOUT SECTION */
+        .about-section { padding: 100px 10% 200px; }
+        .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 100px; }
+        .section-tag { text-transform: uppercase; font-size: 0.7rem; letter-spacing: 3px; color: var(--accent); margin-bottom: 25px; }
+        .about-hi { font-family: var(--font-hero); font-size: 4rem; margin-bottom: 30px; }
+        .about-bio { font-size: 1.4rem; line-height: 1.5; color: var(--gray); margin-bottom: 50px; }
+        .about-bio strong { color: var(--white); }
+
+        .status-card { display: inline-flex; align-items: center; gap: 15px; background: rgba(255,255,255,0.03); padding: 15px 30px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.08); font-size: 0.9rem; }
+        .pulse { width: 8px; height: 8px; background: #00ff88; border-radius: 50%; box-shadow: 0 0 10px #00ff88; animation: blink 2s infinite; }
+
+        @keyframes blink { 0% { opacity: 0.4; } 50% { opacity: 1; } 100% { opacity: 0.4; } }
+
+        /* SKILLS CARD */
+        .philosophy-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+            padding: 60px;
+            border-radius: 40px;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+        }
+
+        .philosophy-card h3 { font-family: var(--font-hero); margin-bottom: 30px; font-size: 1.8rem; }
+        .values-list { list-style: none; }
+        .values-list li { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: var(--font-hero); font-weight: 800; font-size: 1.4rem; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
+        .values-list li span { font-family: 'Inter'; font-weight: 400; font-size: 0.75rem; color: var(--gray); }
+
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .about-grid { grid-template-columns: 1fr; gap: 60px; }
+            .about-hi { font-size: 3rem; }
+            body { cursor: auto; }
+            .cursor, .cursor-follower { display: none; }
+        }
+    </style>
 </head>
-<body>
+<body class="bg-main">
 
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
@@ -85,10 +233,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <script>
+        // Smooth Scroll (Lenis)
         const lenis = new Lenis();
         function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
         requestAnimationFrame(raf);
 
+        // Custom Cursor Logic
         const cursor = document.querySelector('.cursor');
         const follower = document.querySelector('.cursor-follower');
         
@@ -97,13 +247,24 @@
             gsap.to(follower, { x: e.clientX, y: e.clientY, duration: 0.4, ease: "power2.out" });
         });
 
+        // GSAP Animations
         gsap.registerPlugin(ScrollTrigger);
-        gsap.from(".hero-title", { y: 100, opacity: 0, duration: 1.5, ease: "expo.out" });
+
+        // Hero entrance
+        gsap.from(".hero-title", { y: 100, opacity: 0, duration: 1.5, ease: "expo.out", delay: 0.5 });
+
+        // Scroll Reveal
         gsap.utils.toArray(".reveal").forEach(el => {
             gsap.from(el, {
                 scrollTrigger: { trigger: el, start: "top 85%" },
                 y: 50, opacity: 0, duration: 1.2, ease: "power3.out"
             });
+        });
+
+        // About Card entrance
+        gsap.from(".philosophy-card", {
+            scrollTrigger: { trigger: ".about-section", start: "top 60%" },
+            x: 80, opacity: 0, duration: 1.5, ease: "expo.out"
         });
     </script>
 </body>
