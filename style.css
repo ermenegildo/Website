@@ -1,0 +1,356 @@
+/* --- Reset di Base --- */
+:root {
+    --bg-dark: #050509; /* Quasi nero */
+    --bg-light: #ffffff;
+    --text-light: #f8f9fa;
+    --text-dark: #343a40;
+    --accent-1: #ff007f; /* Magenta */
+    --accent-2: #00e5ff; /* Ciano */
+    --accent-3: #ffaa00; /* Arancio-Giallo */
+    --font-main: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-shadow: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden; /* Previene scorrimento orizzontale imprevisto */
+}
+
+/* Temi */
+.dark-theme {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.light-theme {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+/* --- Tipografia --- */
+h1.hero-title {
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+h2.section-tagline {
+    font-size: 1.2rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+h3.project-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+p {
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: #b0b0b0;
+    max-width: 700px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+/* --- Componenti --- */
+.gradient-text {
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-3));
+    color: white;
+}
+
+.btn-secondary {
+    border: 1px solid #444;
+    color: #ccc;
+}
+
+.btn-secondary:hover {
+    background-color: #1a1a2e;
+    color: white;
+}
+
+/* --- Layout delle Sezioni --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px;
+    z-index: 1000;
+    background: rgba(5, 5, 9, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ccc;
+}
+
+.nav-links a:hover {
+    color: var(--text-light);
+}
+
+main {
+    margin-top: 100px; /* Spazio per l'header fisso */
+}
+
+/* Hero Section */
+.hero-banner {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle at 70% 30%, rgba(255, 0, 127, 0.2) 0%, rgba(5, 5, 9, 0) 60%),
+                radial-gradient(circle at 30% 70%, rgba(0, 229, 255, 0.2) 0%, rgba(5, 5, 9, 0) 60%);
+    padding: 0 20px;
+}
+
+.hero-subtitle {
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Stack Section */
+.stack-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.logo-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.logo-item img {
+    filter: grayscale(100%) opacity(50%);
+    transition: filter 0.3s ease;
+}
+
+.logo-item img:hover {
+    filter: grayscale(0%) opacity(100%);
+}
+
+/* About Section */
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 10%;
+    gap: 50px;
+}
+
+.about-text p {
+    color: #ccc;
+}
+
+.about-image img {
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-width: 100%;
+}
+
+/* Projects Section */
+.project-showcase {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 10%;
+    gap: 50px;
+    border-bottom: 1px solid #111;
+}
+
+.project-showcase:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.project-details {
+    max-width: 500px;
+}
+
+.project-visual .mockup-container {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+}
+
+.project-visual img {
+    display: block;
+    width: 100%;
+}
+
+.blob-gradient {
+    position: absolute;
+    top: -20%;
+    right: -20%;
+    width: 140%;
+    height: 140%;
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0.4;
+    z-index: -1;
+}
+
+.blob-gradient.green-blue {
+    background: radial-gradient(circle, var(--accent-2) 0%, rgba(0, 229, 255, 0) 70%);
+}
+
+.tech-tags {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.tech-tags span {
+    font-size: 0.8rem;
+    background: #111;
+    color: #aaa;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+/* Services Grid */
+.services-section {
+    padding: 100px 10%;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    padding: 40px;
+    border-radius: 15px;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+.service-card.dark {
+    background-color: #111;
+    color: var(--text-light);
+    border: 1px solid #222;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.service-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: #ccc;
+    font-size: 1rem;
+}
+
+/* Footer */
+footer {
+    padding: 50px 10%;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eaeaea;
+    padding-top: 20px;
+}
+
+.light-theme .footer-bottom {
+    color: var(--text-dark);
+}
+
+.light-theme .social-links a {
+    color: #555;
+    font-size: 0.9rem;
+    margin-left: 20px;
+}
+
+.light-theme .social-links a:hover {
+    color: var(--text-dark);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    h1.hero-title { font-size: 2.8rem; }
+    h3.project-title { font-size: 1.8rem; }
+    .about-section, .project-showcase {
+        flex-direction: column !important;
+        text-align: center;
+        padding: 50px 20px;
+    }
+    .about-image { margin-top: 30px; }
+}
