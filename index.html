@@ -3,129 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ERMENEGILDO | Creative Tech Intelligence</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    <title>ERMENEGILDO | Creative Tech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
-    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body class="bg-main">
 
-    <div class="cursor"></div>
-
     <header class="header">
-        <div class="nav-container">
-            <div class="logo">E.</div>
-            <nav class="nav-menu">
-                <a href="#projects" class="nav-link">Works</a>
-                <a href="#about" class="nav-link">Vision</a>
-                <a href="#contact" class="nav-link">Studio</a>
-            </nav>
-        </div>
+        <div class="logo">E.</div>
     </header>
 
     <main>
         <section class="hero">
-            <div class="hero-noise"></div>
-            <div class="hero-vignette"></div>
             <div class="hero-content">
-                <div class="reveal-box">
-                    <h1 class="hero-title">
-                        Translating <br>
-                        <span class="thin-text">complexity</span> <br>
-                        into <span class="gradient-text">clarity.</span>
-                    </h1>
-                </div>
-                <p class="hero-subline">AI-Native Creative Technology for the Next Era of Luxury.</p>
-                <div class="hero-cta-container">
-                    <button class="btn-magnetic">Explore Experience</button>
-                </div>
+                <h1 class="hero-title">
+                    Translating <br>
+                    <span class="thin-text">complexity</span> <br>
+                    into <span class="gradient-text">clarity.</span>
+                </h1>
+                <p class="hero-subline">AI-Native Creative Technology.</p>
             </div>
             <div class="blob blob-1"></div>
             <div class="blob blob-2"></div>
         </section>
 
-        <section id="about" class="manifesto">
-            <div class="container">
-                <p class="section-tag">Philosophy</p>
-                <h2 class="reveal-text">We weave digital <span class="white-text">silk</span> from neural networks. A symphony of <span class="italic-text">precision</span> and art.</h2>
-            </div>
-        </section>
-
-        <section id="projects" class="projects">
+        <section class="projects">
             <div class="bento-grid">
-                <div class="bento-item tall" data-speed="1.1">
-                    <div class="project-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1000" alt="Work">
-                        <div class="project-info">
-                            <h3>Neo-Chic</h3>
-                            <span>Visual Art</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="bento-item wide">
-                    <div class="project-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1633167606207-d840b5070fc2?auto=format&fit=crop&q=80&w=1000" alt="Work">
-                        <div class="project-info">
-                            <h3>Quantum UI</h3>
-                            <span>Silicon Valley Tech</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="bento-item small">
-                    <div class="project-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=1000" alt="Work">
-                        <div class="project-info">
-                            <h3>Liquid Flow</h3>
-                            <span>Motion</span>
-                        </div>
-                    </div>
-                </div>
+                <div class="bento-item tall"><img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800" alt="Work"></div>
+                <div class="bento-item wide"><img src="https://images.unsplash.com/photo-1633167606207-d840b5070fc2?w=800" alt="Work"></div>
             </div>
         </section>
     </main>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script>
-        // 1. Smooth Scroll (Lenis)
-        const lenis = new Lenis();
-        function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
-
-        // 2. Custom Cursor
-        const cursor = document.querySelector('.cursor');
-        document.addEventListener('mousemove', (e) => {
-            gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.5, ease: "power2.out" });
-        });
-
-        // 3. Hero Animations
-        gsap.from(".hero-title", {
-            y: 100,
-            opacity: 0,
-            duration: 1.5,
-            ease: "expo.out",
-            delay: 0.5
-        });
-
-        // 4. Scroll Reveal
-        gsap.utils.toArray(".reveal-text").forEach(text => {
-            gsap.from(text, {
-                scrollTrigger: {
-                    trigger: text,
-                    start: "top 80%",
-                },
-                opacity: 0,
+        // Animazione semplice senza librerie pesanti per ora
+        window.onload = () => {
+            gsap.from(".hero-title", {
                 y: 50,
-                duration: 1,
-                ease: "power3.out"
+                opacity: 0,
+                duration: 1.2,
+                ease: "power4.out"
             });
-        });
+        };
     </script>
 </body>
 </html>
