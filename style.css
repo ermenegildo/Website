@@ -1,151 +1,79 @@
-:root {
-    --black: #05050a;
-    --white: #ffffff;
-    --accent: #ff007f;
-    --gray: #888;
-    --font-hero: 'Syne', sans-serif;
-}
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAMIANO MENEGHETTI | Design Strategy</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-body {
-    background-color: var(--black);
-    color: var(--white);
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
-    cursor: none; /* Nasconde il cursore di sistema */
-}
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
 
-/* CUSTOM CURSOR */
-.cursor {
-    width: 8px;
-    height: 8px;
-    background: var(--white);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 10000;
-}
+    <header class="header">
+        <div class="logo">D.M.</div>
+        <nav class="nav-links">
+            <a href="#about">About</a>
+            <a href="https://www.linkedin.com/in/damianomeneghetti/" target="_blank">LinkedIn</a>
+        </nav>
+    </header>
 
-.cursor-follower {
-    width: 40px;
-    height: 40px;
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-15px, -15px);
-}
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Translating <br>
+                    <span class="thin-text">complexity</span> <br>
+                    into <span class="gradient-text">clarity.</span>
+                </h1>
+                <p class="hero-experience">16 YEARS OF STRATEGIC DESIGN EXCELLENCE</p>
+                <div class="hero-cta">
+                    <a href="https://www.linkedin.com/in/damianomeneghetti/" target="_blank" class="btn-premium">
+                        Connect <span class="arrow">↗</span>
+                    </a>
+                </div>
+            </div>
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+        </section>
 
-/* LAYOUT */
-.container { padding: 0 10%; }
+        <section class="practice-section">
+            <div class="container">
+                <h2 class="practice-main-text reveal">
+                    My practice merges <strong>strategy</strong>, <strong>interaction design</strong>, and <strong>cognitive psychology</strong> to transform complex systems into elegant, high-impact experiences.
+                </h2>
+            </div>
+        </section>
 
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
+        <section id="about" class="about-section">
+            <div class="about-grid">
+                <div class="about-left">
+                    <p class="section-tag">About Me</p>
+                    <h2 class="about-hi">Hi, I’m Damiano.</h2>
+                    <p class="about-bio">
+                        I design digital experiences that <strong>simplify complexity without sacrificing sophistication.</strong> 
+                        My work exists at the intersection of human behavior, product strategy, and emerging technology.
+                    </p>
+                    <div class="status-card">
+                        <span class="pulse"></span>
+                        Currently at <strong>Akamas</strong>.
+                    </div>
+                </div>
 
-.hero-experience {
-    font-size: 0.7rem;
-    letter-spacing: 5px;
-    margin-top: 30px;
-    color: var(--gray);
-}
-
-/* PRACTICE & ABOUT */
-.practice-section { padding: 200px 10%; }
-.practice-main-text {
-    font-family: var(--font-hero);
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    line-height: 1.1;
-    font-weight: 400;
-    color: #ccc;
-}
-.practice-main-text strong { color: var(--white); font-weight: 800; }
-
-.about-section {
-    padding: 100px 10% 200px;
-}
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 100px;
-}
-
-.section-tag {
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    letter-spacing: 3px;
-    color: var(--accent);
-    margin-bottom: 20px;
-}
-
-.about-hi {
-    font-family: var(--font-hero);
-    font-size: 4rem;
-    margin-bottom: 30px;
-}
-
-.about-bio {
-    font-size: 1.4rem;
-    line-height: 1.5;
-    color: var(--gray);
-    margin-bottom: 40px;
-}
-
-.about-bio strong { color: var(--white); }
-
-/* STATUS CARD */
-.status-card {
-    background: rgba(255,255,255,0.03);
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.08);
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-size: 0.9rem;
-}
-
-.pulse {
-    width: 8px;
-    height: 8px;
-    background: #00ff88;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #00ff88;
-    animation: blink 2s infinite;
-}
-
-@keyframes blink { 0% { opacity: 0.3; } 50% { opacity: 1; } 100% { opacity: 0.3; } }
-
-/* PHILOSOPHY CARD */
-.philosophy-card {
-    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
-    padding: 60px;
-    border-radius: 30px;
-    border: 1px solid rgba(255,255,255,0.1);
-    backdrop-filter: blur(20px);
-}
-
-.philosophy-card h3 { font-family: var(--font-hero); margin-bottom: 20px; font-size: 1.8rem; }
-
-.values-list {
-    list-style: none;
-    margin-top: 40px;
-}
-
-.values-list li {
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    font-family: var(--font-hero);
-    font-weight: 700;
-    text-transform: uppercase;
-    display: flex;
-    justify-content: space-between;
-}
-
-.values-list li span { color: var(--accent); font-size: 0.7rem; }
+                <div class="about-right">
+                    <div class="philosophy-card">
+                        <h3>Skills:</h3>
+                        <ul class="values-list">
+                            <li>UX Design <span>01</span></li>
+                            <li>UI Design <span>02</span></li>
+                            <li>Branding <span>03</span></li>
+                            <li>Art Direction <span>04</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
