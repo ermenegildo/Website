@@ -1,51 +1,38 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ERMENEGILDO | Creative Tech</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="bg-main">
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">
+            Translating <br>
+            <span class="thin-text">complexity</span> <br>
+            into <span class="gradient-text">clarity.</span>
+        </h1>
+        <p class="hero-experience">16 YEARS OF EXPERIENCE IN DESIGN</p>
+        
+        <div class="hero-cta-container">
+            <a href="https://www.linkedin.com/in/damianomeneghetti/" target="_blank" class="btn-premium">
+                Connect on LinkedIn <span class="arrow">↗</span>
+            </a>
+        </div>
+    </div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+</section>
 
-    <header class="header">
-        <div class="logo">E.</div>
-    </header>
-
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    Translating <br>
-                    <span class="thin-text">complexity</span> <br>
-                    into <span class="gradient-text">clarity.</span>
-                </h1>
-                <p class="hero-subline">AI-Native Creative Technology.</p>
+<section class="practice-section">
+    <div class="container">
+        <div class="practice-grid">
+            <div class="practice-label">My Practice</div>
+            <div class="practice-content">
+                <h2 class="practice-text">
+                    My practice merges <span class="highlight">strategy</span>, interaction design, 
+                    cognitive psychology, and empirical research to transform 
+                    <span class="thin-italic">complex systems</span> into elegant experiences.
+                </h2>
+                <h3 class="practice-subtext">
+                    I focus on designing products that are not only functional, but 
+                    <span class="emotion">emotionally intuitive</span> — interfaces that users 
+                    understand before they even think about them.
+                </h3>
             </div>
-            <div class="blob blob-1"></div>
-            <div class="blob blob-2"></div>
-        </section>
-
-        <section class="projects">
-            <div class="bento-grid">
-                <div class="bento-item tall"><img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800" alt="Work"></div>
-                <div class="bento-item wide"><img src="https://images.unsplash.com/photo-1633167606207-d840b5070fc2?w=800" alt="Work"></div>
-            </div>
-        </section>
-    </main>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script>
-        // Animazione semplice senza librerie pesanti per ora
-        window.onload = () => {
-            gsap.from(".hero-title", {
-                y: 50,
-                opacity: 0,
-                duration: 1.2,
-                ease: "power4.out"
-            });
-        };
-    </script>
-</body>
-</html>
+        </div>
+    </div>
+</section>
