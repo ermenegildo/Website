@@ -1,107 +1,151 @@
-/* --- Tipografia Hero Migliorata --- */
-.hero-experience {
-    font-size: 0.75rem;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--gray);
-    margin-top: 40px;
-    font-weight: 400;
-    opacity: 0.8;
+:root {
+    --black: #05050a;
+    --white: #ffffff;
+    --accent: #ff007f;
+    --gray: #888;
+    --font-hero: 'Syne', sans-serif;
 }
 
-/* --- Pulsante Premium LinkedIn --- */
-.btn-premium {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 18px 35px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 100px;
-    color: var(--white);
-    text-decoration: none;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    backdrop-filter: blur(10px);
-    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-premium:hover {
-    background: var(--white);
-    color: var(--black);
-    transform: translateY(-5px);
-    border-color: var(--white);
-}
-
-.arrow {
-    margin-left: 10px;
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.btn-premium:hover .arrow {
-    transform: translate(3px, -3px);
-}
-
-/* --- Sezione Practice (Tipografia Editoriale) --- */
-.practice-section {
-    padding: 150px 10%;
+body {
     background-color: var(--black);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    cursor: none; /* Nasconde il cursore di sistema */
 }
 
-.practice-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 50px;
+/* CUSTOM CURSOR */
+.cursor {
+    width: 8px;
+    height: 8px;
+    background: var(--white);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
 }
 
-.practice-label {
+.cursor-follower {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-15px, -15px);
+}
+
+/* LAYOUT */
+.container { padding: 0 10%; }
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-experience {
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    margin-top: 30px;
+    color: var(--gray);
+}
+
+/* PRACTICE & ABOUT */
+.practice-section { padding: 200px 10%; }
+.practice-main-text {
     font-family: var(--font-hero);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    font-weight: 400;
+    color: #ccc;
+}
+.practice-main-text strong { color: var(--white); font-weight: 800; }
+
+.about-section {
+    padding: 100px 10% 200px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 100px;
+}
+
+.section-tag {
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     letter-spacing: 3px;
     color: var(--accent);
+    margin-bottom: 20px;
 }
 
-.practice-text {
+.about-hi {
     font-family: var(--font-hero);
-    font-size: clamp(1.8rem, 4vw, 3.2rem);
-    line-height: 1.1;
-    font-weight: 700;
-    margin-bottom: 40px;
-    color: #e0e0e0;
+    font-size: 4rem;
+    margin-bottom: 30px;
 }
 
-.practice-text .highlight {
-    color: var(--white);
-}
-
-.practice-text .thin-italic {
-    font-weight: 400;
-    font-style: italic;
-    font-family: 'Inter', sans-serif;
-    opacity: 0.7;
-}
-
-.practice-subtext {
-    font-family: 'Inter', sans-serif;
-    font-size: clamp(1.1rem, 2vw, 1.5rem);
-    line-height: 1.6;
-    font-weight: 300;
+.about-bio {
+    font-size: 1.4rem;
+    line-height: 1.5;
     color: var(--gray);
-    max-width: 800px;
+    margin-bottom: 40px;
 }
 
-.practice-subtext .emotion {
-    color: var(--white);
-    border-bottom: 1px solid var(--accent);
+.about-bio strong { color: var(--white); }
+
+/* STATUS CARD */
+.status-card {
+    background: rgba(255,255,255,0.03);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.9rem;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .practice-grid {
-        grid-template-columns: 1fr;
-    }
-    .practice-text { font-size: 2rem; }
+.pulse {
+    width: 8px;
+    height: 8px;
+    background: #00ff88;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00ff88;
+    animation: blink 2s infinite;
 }
+
+@keyframes blink { 0% { opacity: 0.3; } 50% { opacity: 1; } 100% { opacity: 0.3; } }
+
+/* PHILOSOPHY CARD */
+.philosophy-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+    padding: 60px;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(20px);
+}
+
+.philosophy-card h3 { font-family: var(--font-hero); margin-bottom: 20px; font-size: 1.8rem; }
+
+.values-list {
+    list-style: none;
+    margin-top: 40px;
+}
+
+.values-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-family: var(--font-hero);
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+}
+
+.values-list li span { color: var(--accent); font-size: 0.7rem; }
