@@ -3,42 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAMIANO MENEGHETTI | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Syne:wght@800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-</head>
-<body class="bg-main">
+    <title>DAMIANO MENEGHETTI | Design Strategy</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 
-    <div class="cursor-fallback"></div> <header class="header">
-        <div class="logo">D.M.</div>
-    </header>
+    <style>
+        /* CSS INTEGRATO - COSI' NON SI ROMPE NULLA */
+        :root {
+            --black: #05050a;
+            --white: #ffffff;
+            --accent: #ff007f;
+            --gray: #888;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--black);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            cursor: default; /* Cursore normale per ora, così non lo perdi */
+        }
+
+        .container { padding: 0 10%; }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 0, 127, 0.05) 0%, transparent 70%);
+        }
+
+        .hero-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            line-height: 0.9;
+            text-transform: uppercase;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .thin-text {
+            font-weight: 400;
+            font-style: italic;
+            -webkit-text-stroke: 1px var(--white);
+            color: transparent;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--accent), #00e5ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-experience {
+            font-size: 0.7rem;
+            letter-spacing: 5px;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .btn-premium {
+            padding: 15px 35px;
+            border: 1px solid white;
+            color: white;
+            text-decoration: none;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .btn-premium:hover {
+            background: white;
+            color: black;
+        }
+
+        /* PRACTICE & ABOUT */
+        .practice-section { padding: 150px 10%; }
+        
+        .practice-main-text {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            line-height: 1.2;
+            color: #ccc;
+        }
+
+        .practice-main-text strong { color: white; }
+
+        .about-section { padding: 100px 10%; border-top: 1px solid #111; }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .about-hi { font-family: 'Syne', sans-serif; font-size: 3rem; margin-bottom: 20px; }
+        
+        .about-bio { font-size: 1.2rem; color: var(--gray); margin-bottom: 30px; }
+
+        .philosophy-card {
+            background: #111;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #222;
+        }
+
+        .values-list { list-style: none; margin-top: 30px; }
+        .values-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #222;
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Syne', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
 
     <main>
         <section class="hero">
-            <h1 class="hero-title">Translating <span class="thin-text">complexity</span> into clarity.</h1>
+            <h1 class="hero-title">
+                Translating <br>
+                <span class="thin-text">complexity</span> <br>
+                into <span class="gradient-text">clarity.</span>
+            </h1>
             <p class="hero-experience">16 YEARS OF EXPERIENCE IN DESIGN</p>
-            <a href="https://www.linkedin.com/in/damianomeneghetti/" target="_blank" class="btn-premium">LinkedIn ↗</a>
+            <a href="https://www.linkedin.com/in/damianomeneghetti/" target="_blank" class="btn-premium">Connect on LinkedIn ↗</a>
         </section>
 
         <section class="practice-section">
-            <h2 class="reveal">My practice merges strategy, interaction design, and cognitive psychology.</h2>
+            <h2 class="practice-main-text">
+                My practice merges <strong>strategy</strong>, <strong>interaction design</strong>, and <strong>cognitive psychology</strong> to transform complex systems into elegant experiences.
+            </h2>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="about-grid">
+                <div>
+                    <h2 class="about-hi">Hi, I’m Damiano.</h2>
+                    <p class="about-bio">
+                        I design digital experiences that simplify complexity without sacrificing sophistication. My work sits at the intersection of human behavior, product strategy, and systems architecture.
+                    </p>
+                    <p style="color: #00ff88; font-size: 0.9rem;">● Currently at Akamas</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>Designing Beyond Interfaces</h3>
+                    <p style="color: #888; font-size: 0.9rem; margin-top: 10px;">Products are living systems shaped by behavior and emotion.</p>
+                    <ul class="values-list">
+                        <li>Intuitive <span>01</span></li>
+                        <li>Intelligent <span>02</span></li>
+                        <li>Frictionless <span>03</span></li>
+                        <li>Emotionally Coherent <span>04</span></li>
+                    </ul>
+                </div>
+            </div>
         </section>
     </main>
 
-    <script>
-        // Avviamo GSAP solo se la pagina è carica
-        window.addEventListener('DOMContentLoaded', () => {
-            gsap.registerPlugin(ScrollTrigger);
-            
-            gsap.from(".hero-title", {
-                y: 50,
-                opacity: 0,
-                duration: 1.5,
-                ease: "power4.out"
-            });
-        });
-    </script>
 </body>
 </html>
