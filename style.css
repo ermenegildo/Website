@@ -1,79 +1,124 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAMIANO MENEGHETTI | Design Strategy</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+:root {
+    --black: #05050a;
+    --white: #ffffff;
+    --accent: #ff007f;
+    --gray: #888;
+    --font-hero: 'Syne', sans-serif;
+}
 
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    <header class="header">
-        <div class="logo">D.M.</div>
-        <nav class="nav-links">
-            <a href="#about">About</a>
-            <a href="https://www.linkedin.com/in/damianomeneghetti/" target="_blank">LinkedIn</a>
-        </nav>
-    </header>
+html { scroll-behavior: initial; }
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    Translating <br>
-                    <span class="thin-text">complexity</span> <br>
-                    into <span class="gradient-text">clarity.</span>
-                </h1>
-                <p class="hero-experience">16 YEARS OF STRATEGIC DESIGN EXCELLENCE</p>
-                <div class="hero-cta">
-                    <a href="https://www.linkedin.com/in/damianomeneghetti/" target="_blank" class="btn-premium">
-                        Connect <span class="arrow">↗</span>
-                    </a>
-                </div>
-            </div>
-            <div class="blob blob-1"></div>
-            <div class="blob blob-2"></div>
-        </section>
+body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    cursor: none; /* Nascondiamo il cursore per il tracker */
+}
 
-        <section class="practice-section">
-            <div class="container">
-                <h2 class="practice-main-text reveal">
-                    My practice merges <strong>strategy</strong>, <strong>interaction design</strong>, and <strong>cognitive psychology</strong> to transform complex systems into elegant, high-impact experiences.
-                </h2>
-            </div>
-        </section>
+/* --- MOUSE TRACKER --- */
+.cursor {
+    width: 6px;
+    height: 6px;
+    background: var(--white);
+    border-radius: 50%;
+    position: fixed;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 10000;
+}
 
-        <section id="about" class="about-section">
-            <div class="about-grid">
-                <div class="about-left">
-                    <p class="section-tag">About Me</p>
-                    <h2 class="about-hi">Hi, I’m Damiano.</h2>
-                    <p class="about-bio">
-                        I design digital experiences that <strong>simplify complexity without sacrificing sophistication.</strong> 
-                        My work exists at the intersection of human behavior, product strategy, and emerging technology.
-                    </p>
-                    <div class="status-card">
-                        <span class="pulse"></span>
-                        Currently at <strong>Akamas</strong>.
-                    </div>
-                </div>
+.cursor-follower {
+    width: 35px;
+    height: 35px;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 50%;
+    position: fixed;
+    top: -14.5px; left: -14.5px; /* Offset per centrarlo */
+    pointer-events: none;
+    z-index: 9999;
+}
 
-                <div class="about-right">
-                    <div class="philosophy-card">
-                        <h3>Skills:</h3>
-                        <ul class="values-list">
-                            <li>UX Design <span>01</span></li>
-                            <li>UI Design <span>02</span></li>
-                            <li>Branding <span>03</span></li>
-                            <li>Art Direction <span>04</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+/* --- HEADER --- */
+.header {
+    position: fixed;
+    top: 0; width: 100%;
+    padding: 30px 10%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+.logo { font-family: var(--font-hero); font-weight: 800; font-size: 1.2rem; }
+.nav-links a { color: var(--white); text-decoration: none; margin-left: 30px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.6; transition: 0.3s; }
+.nav-links a:hover { opacity: 1; }
+
+/* --- HERO --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-title {
+    font-family: var(--font-hero);
+    font-size: clamp(3rem, 10vw, 7.5rem);
+    font-weight: 800;
+    line-height: 0.85;
+    text-transform: uppercase;
+    letter-spacing: -4px;
+}
+
+.thin-text { font-weight: 400; font-style: italic; -webkit-text-stroke: 1px var(--white); color: transparent; }
+.gradient-text { background: linear-gradient(90deg, #ff007f, #00e5ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero-experience { font-size: 0.65rem; letter-spacing: 6px; margin-top: 40px; color: var(--gray); font-weight: 300; }
+
+.btn-premium { display: inline-block; margin-top: 40px; padding: 18px 35px; border: 1px solid rgba(255,255,255,0.3); border-radius: 100px; color: white; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; transition: 0.4s; }
+.btn-premium:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+
+.blob { position: absolute; border-radius: 50%; filter: blur(120px); z-index: -1; opacity: 0.2; }
+.blob-1 { width: 400px; height: 400px; background: var(--accent); top: 10%; left: 10%; }
+.blob-2 { width: 500px; height: 500px; background: #0047ff; bottom: 0%; right: 5%; }
+
+/* --- SECTIONS --- */
+.practice-section { padding: 250px 10%; }
+.practice-main-text { font-family: var(--font-hero); font-size: clamp(1.8rem, 4.5vw, 3.8rem); line-height: 1.1; color: #999; }
+.practice-main-text strong { color: var(--white); font-weight: 800; }
+
+.about-section { padding: 100px 10% 200px; }
+.about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; }
+.section-tag { text-transform: uppercase; font-size: 0.7rem; letter-spacing: 3px; color: var(--accent); margin-bottom: 30px; }
+.about-hi { font-family: var(--font-hero); font-size: 4.5rem; margin-bottom: 30px; letter-spacing: -2px; }
+.about-bio { font-size: 1.4rem; line-height: 1.4; color: var(--gray); margin-bottom: 50px; font-weight: 300; }
+.about-bio strong { color: var(--white); font-weight: 600; }
+
+.status-card { display: inline-flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.03); padding: 12px 24px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.08); font-size: 0.85rem; }
+.pulse { width: 8px; height: 8px; background: #00ff88; border-radius: 50%; animation: blink 2s infinite; }
+
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+/* --- SKILLS CARD --- */
+.philosophy-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+    padding: 60px;
+    border-radius: 40px;
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(20px);
+}
+
+.philosophy-card h3 { font-family: var(--font-hero); font-size: 1.5rem; margin-bottom: 30px; }
+.values-list { list-style: none; }
+.values-list li { padding: 25px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: var(--font-hero); font-weight: 800; font-size: 1.4rem; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
+.values-list li span { font-family: 'Inter'; font-weight: 400; font-size: 0.7rem; color: var(--gray); }
+
+@media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .about-hi { font-size: 3rem; }
+    .cursor, .cursor-follower { display: none; }
+    body { cursor: auto; }
+}
