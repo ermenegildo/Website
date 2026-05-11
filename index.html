@@ -1,101 +1,110 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAMIANO MENEGHETTI | Design Strategy & Systems</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAMIANO MENEGHETTI | Design Strategy</title>
     
-    <style>
-        /* --- CSS INTEGRATO --- */
-        :root {
-            --black: #05050a;
-            --white: #ffffff;
-            --accent: #ff007f;
-            --gray: #888;
-            --font-hero: 'Syne', sans-serif;
-        }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
 
-        body {
-            background-color: var(--black);
-            color: var(--white);
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-            /* Nascondiamo il cursore di sistema */
-            cursor: none; 
-        }
+    <header class="header">
+        <div class="logo">D.M.</div>
+        <nav class="nav-links">
+            <a href="#about">About</a>
+            <a href="https://www.linkedin.com/in/damianomeneghetti/" target="_blank">LinkedIn</a>
+        </nav>
+    </header>
 
-        /* CUSTOM CURSOR */
-        .cursor {
-            width: 8px;
-            height: 8px;
-            background: var(--white);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none; /* Fondamentale: non intercetta i click */
-            z-index: 10000;
-            transform: translate(-50%, -50%); /* Centra il pallino */
-        }
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Translating <br>
+                    <span class="thin-text">complexity</span> <br>
+                    into <span class="gradient-text">clarity.</span>
+                </h1>
+                <p class="hero-experience">16 YEARS OF STRATEGIC DESIGN EXCELLENCE</p>
+                <div class="hero-cta">
+                    <a href="https://www.linkedin.com/in/damianomeneghetti/" target="_blank" class="btn-premium">
+                        Connect <span class="arrow">↗</span>
+                    </a>
+                </div>
+            </div>
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+        </section>
 
-        .cursor-follower {
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%); /* Centra il follower */
-        }
+        <section class="practice-section">
+            <div class="container">
+                <h2 class="practice-main-text reveal">
+                    My practice merges <strong>strategy</strong>, <strong>interaction design</strong>, and <strong>cognitive psychology</strong> to transform complex systems into elegant, high-impact experiences.
+                </h2>
+            </div>
+        </section>
 
-        /* LAYOUT */
-        .container { padding: 0 10%; }
+        <section id="about" class="about-section">
+            <div class="about-grid">
+                <div class="about-left">
+                    <p class="section-tag">About Me</p>
+                    <h2 class="about-hi">Hi, I’m Damiano.</h2>
+                    <p class="about-bio">
+                        I design digital experiences that <strong>simplify complexity without sacrificing sophistication.</strong> 
+                        My work exists at the intersection of human behavior, product strategy, and emerging technology.
+                    </p>
+                    <div class="status-card">
+                        <span class="pulse"></span>
+                        Currently at <strong>Akamas</strong>.
+                    </div>
+                </div>
 
-        header.header {
-            position: fixed;
-            top: 0; width: 100%;
-            padding: 30px 50px;
-            display: flex; justify-content: space-between; align-items: center;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-        }
+                <div class="about-right">
+                    <div class="philosophy-card">
+                        <h3>Skills:</h3>
+                        <ul class="values-list">
+                            <li>UX Design <span>01</span></li>
+                            <li>UI Design <span>02</span></li>
+                            <li>Branding <span>03</span></li>
+                            <li>Art Direction <span>04</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-        .logo { font-family: var(--font-hero); font-weight: 800; font-size: 1.2rem; }
-        .nav-links a { color: var(--white); text-decoration: none; margin-left: 30px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; }
+    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-        .hero {
-            height: 100vh;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-            position: relative;
-        }
+    <script>
+        const lenis = new Lenis();
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
 
-        .hero-title {
-            font-family: var(--font-hero);
-            font-size: clamp(3rem, 10vw, 7rem);
-            font-weight: 800;
-            line-height: 0.9;
-            text-transform: uppercase;
-            letter-spacing: -3px;
-        }
+        const cursor = document.querySelector('.cursor');
+        const follower = document.querySelector('.cursor-follower');
+        
+        document.addEventListener('mousemove', (e) => {
+            gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
+            gsap.to(follower, { x: e.clientX, y: e.clientY, duration: 0.4, ease: "power2.out" });
+        });
 
-        .thin-text { font-weight: 400; font-style: italic; -webkit-text-stroke: 1px var(--white); color: transparent; }
-        .gradient-text { background: linear-gradient(90deg, #ff007f, #00e5ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-
-        .hero-experience { font-size: 0.7rem; letter-spacing: 5px; margin-top: 30px; color: var(--gray); }
-        .btn-premium { display: inline-block; margin-top: 30px; padding: 15px 30px; border: 1px solid white; border-radius: 100px; color: white; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
-        .btn-premium:hover { background: white; color: black; }
-
-        .blob { position: absolute; border-radius: 50%; filter: blur(100px); z-index: -1; opacity: 0.3; }
-        .blob-1 { width: 300px; height: 300px; background: var(--accent); top: 10%; left: 10%; }
-        .blob-2 { width: 400px; height: 400px; background: #0047ff; bottom: 10%; right: 10%; }
-
-        /* PRACTICE & ABOUT */
-        .practice-section { padding: 200px 10%; }
-        .practice-main-text { font-family: var(--font-hero); font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; font-weight: 400; color: #ccc; }
-        .practice-main-text strong { color: var(--white); font-weight: 800; }
-
-        .about-section { padding: 100px 10% 200px; }
-        .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 100px; }
-        .section-tag { text-transform: uppercase; font-size: 0.7rem; letter-spacing: 3px; color: var(--accent); margin-bottom: 2
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from(".hero-title", { y: 100, opacity: 0, duration: 1.5, ease: "expo.out" });
+        gsap.utils.toArray(".reveal").forEach(el => {
+            gsap.from(el, {
+                scrollTrigger: { trigger: el, start: "top 85%" },
+                y: 50, opacity: 0, duration: 1.2, ease: "power3.out"
+            });
+        });
+    </script>
+</body>
+</html>
