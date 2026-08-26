@@ -25,25 +25,25 @@
     --cobalt:     #4A5DFF;   /* brightened a touch for dark background contrast */
     --cobalt-deep:#2D43FF;
     --chartreuse: #D4FF00;
- 
+
     --serif: 'Instrument Serif', Georgia, serif;
     --sans:  'Inter', system-ui, sans-serif;
     --mono:  'JetBrains Mono', ui-monospace, monospace;
- 
+
     --t-display: clamp(64px, 11vw, 180px);
     --t-h1:      clamp(40px, 6vw, 88px);
     --t-h2:      clamp(28px, 3.5vw, 56px);
     --t-body:    17px;
     --t-small:   14px;
     --t-mono:    12px;
- 
+
     --gutter: 40px;
     --max-w:  1440px;
- 
+
     --ease-out:    cubic-bezier(0.16, 1, 0.30, 1);
     --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
   }
- 
+
   *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
   html { scroll-behavior: auto; }
   body {
@@ -56,7 +56,7 @@
     cursor: none;
     overflow-x: hidden;
   }
- 
+
   /* ============================================
      CUSTOM CURSOR
      ============================================ */
@@ -76,7 +76,7 @@
   }
   .cursor.hover { width: 60px; height: 60px; background: var(--cobalt); border-color: var(--cobalt); }
   .cursor.drag  { width: 92px; height: 92px; background: var(--chartreuse); border-color: var(--chartreuse); }
- 
+
   /* ============================================
      NAV
      ============================================ */
@@ -94,9 +94,9 @@
   .nav .links { display: flex; gap: 32px; }
   .nav a { color: var(--cream); text-decoration: none; opacity: .8; transition: opacity .2s; }
   .nav a:hover { opacity: 1; }
- 
+
   .container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); position: relative; }
- 
+
   /* ============================================
      HERO
      ============================================ */
@@ -108,7 +108,7 @@
     display: flex; align-items: center; gap: 12px;
   }
   .hero .eyebrow .dot { width: 8px; height: 8px; background: var(--cobalt); border-radius: 50%; }
- 
+
   .hero h1 {
     font-family: var(--serif); font-weight: 400; font-style: italic;
     font-size: var(--t-display); line-height: .9; letter-spacing: -.02em;
@@ -121,7 +121,7 @@
   .hero h1 .word:nth-child(2) > span { transition-delay: .2s; }
   .hero h1 .word:nth-child(3) > span { transition-delay: .3s; }
   .hero h1 .word:nth-child(4) > span { transition-delay: .4s; }
- 
+
   .accent-word { font-style: normal !important; color: var(--cobalt); position: relative; display: inline-block; }
   .accent-word::after {
     content: ''; position: absolute; left: 0; right: 0; bottom: 12%; height: 4px;
@@ -129,7 +129,7 @@
     transition: transform 1.2s var(--ease-out) 1s;
   }
   .hero h1.in .accent-word::after { transform: scaleX(1); }
- 
+
   .hero-sub {
     margin-top: 48px; max-width: 780px;
     font-family: var(--serif); font-style: italic; font-weight: 400;
@@ -140,7 +140,7 @@
   }
   .hero-sub .roman { font-style: normal; color: var(--cream); }
   .hero.in .hero-sub { opacity: 1; transform: none; }
- 
+
   .hero-cta-row {
     display: flex; align-items: center; gap: 32px; margin-top: 48px;
     opacity: 0; transform: translateY(20px);
@@ -161,7 +161,7 @@
     color: var(--muted); text-decoration: none; transition: color .2s;
   }
   .cta-secondary:hover { color: var(--cream); }
- 
+
   .hero-meta {
     display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px;
     margin-top: 120px; padding-top: 32px;
@@ -179,7 +179,7 @@
     font-family: var(--serif); font-style: italic;
     font-size: 26px; line-height: 1.15; color: var(--cream);
   }
- 
+
   .scroll-cue {
     position: absolute; bottom: 32px; left: 40px;
     font-family: var(--mono); font-size: var(--t-mono);
@@ -188,7 +188,7 @@
     animation: bob 2s ease-in-out infinite;
   }
   @keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
- 
+
   /* ============================================
      SECTION HEADS (shared)
      ============================================ */
@@ -209,7 +209,7 @@
   .section-head h2 .roman { font-style: normal; }
   .section-head h2 .acc { color: var(--cobalt); font-style: italic; }
   .section-head .caption { font-size: var(--t-small); line-height: 1.5; color: var(--muted); }
- 
+
   /* ============================================
      WORK — kinetic rail
      ============================================ */
@@ -241,7 +241,7 @@
   .card.flair { background: var(--chartreuse); border-color: var(--chartreuse); color: var(--stage); }
   .card.cobalt { background: var(--cobalt); border-color: var(--cobalt); color: var(--cream); }
   .card.cream { background: var(--cream); border-color: var(--cream); color: var(--stage); }
- 
+
   .card .top {
     display: flex; justify-content: space-between;
     font-family: var(--mono); font-size: var(--t-mono);
@@ -259,14 +259,14 @@
     letter-spacing: .18em; text-transform: uppercase;
   }
   .card .arrow { font-size: 24px; font-family: var(--serif); }
- 
+
   .rail-meta {
     display: flex; justify-content: space-between;
     padding: 16px 40px 0;
     font-family: var(--mono); font-size: var(--t-mono);
     letter-spacing: .18em; text-transform: uppercase; color: var(--muted);
   }
- 
+
   /* ============================================
      ABOUT
      ============================================ */
@@ -293,7 +293,7 @@
   }
   .about-intro p .roman { font-style: normal; color: var(--cream); }
   .about-intro p .acc { font-style: normal; color: var(--cobalt); }
- 
+
   .about-manifesto {
     display: grid; grid-template-columns: 2fr 8fr 2fr; gap: 48px;
     margin-top: 80px; padding-top: 48px;
@@ -306,7 +306,7 @@
   .about-manifesto .stack { display: flex; flex-direction: column; gap: 24px; max-width: 780px; }
   .about-manifesto p { font-size: 20px; line-height: 1.55; color: var(--cream); }
   .about-manifesto p.muted { color: var(--muted); }
- 
+
   .capabilities {
     display: grid; grid-template-columns: repeat(4, 1fr); gap: 48px;
     margin-top: 80px; padding-top: 48px;
@@ -322,7 +322,7 @@
     font-family: var(--serif); font-style: italic; font-size: 20px;
     line-height: 1.25; color: var(--cream);
   }
- 
+
   .skills-strip {
     display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
     margin-top: 80px; border-top: 1px solid rgba(245,241,234,0.15);
@@ -343,7 +343,7 @@
     font-family: var(--serif); font-style: italic;
     font-size: 40px; line-height: 1; letter-spacing: -.01em; color: var(--cream);
   }
- 
+
   /* Experience timeline */
   .experience-head { padding: 120px 0 32px; }
   .exp-row {
@@ -378,10 +378,10 @@
   .exp-toggle:hover { background: var(--cream); color: var(--stage); border-color: var(--cream); }
   .exp-hidden { display: none; }
   .exp-hidden.open { display: contents; }
- 
+
   /* Education */
   .edu-head { padding: 80px 0 32px; }
- 
+
   /* ============================================
      FOOTER
      ============================================ */
@@ -416,10 +416,10 @@
     font-family: var(--mono); font-size: var(--t-mono);
     letter-spacing: .18em; text-transform: uppercase; color: var(--muted);
   }
- 
+
   .reveal { opacity: 0; transform: translateY(40px); transition: all 1s var(--ease-out); }
   .reveal.in { opacity: 1; transform: none; }
- 
+
   @media (max-width: 880px) {
     body { cursor: auto; }
     .cursor { display: none; }
@@ -437,9 +437,9 @@
 </style>
 </head>
 <body>
- 
+
 <div class="cursor" id="cursor"></div>
- 
+
 <nav class="nav">
   <div class="mark">D.M.</div>
   <div class="links">
@@ -448,7 +448,7 @@
     <a href="https://www.linkedin.com/in/damianomeneghetti/" data-cursor="hover">LinkedIn ↗</a>
   </div>
 </nav>
- 
+
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="container">
@@ -481,7 +481,7 @@
   </div>
   <div class="scroll-cue">— Scroll</div>
 </section>
- 
+
 <!-- WORK -->
 <section class="work" id="work">
   <div class="container">
@@ -530,7 +530,7 @@
     <span>06 projects · 2015 – Present</span>
   </div>
 </section>
- 
+
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="container">
@@ -539,7 +539,7 @@
       <h2><span class="roman">A designer for</span> <span class="acc">complex systems.</span></h2>
       <div class="caption">Milan / Remote · 16 years · Available 2026</div>
     </div>
- 
+
     <div class="about-intro reveal">
       <div class="label">Intro</div>
       <div>
@@ -548,7 +548,7 @@
       </div>
       <div></div>
     </div>
- 
+
     <div class="about-manifesto reveal">
       <div class="label">Manifesto</div>
       <div class="stack">
@@ -557,7 +557,7 @@
       </div>
       <div></div>
     </div>
- 
+
     <div class="capabilities reveal">
       <div class="col">
         <span class="label">Focus areas</span>
@@ -602,7 +602,7 @@
         </ul>
       </div>
     </div>
- 
+
     <!-- Skills strip (nod to current site's numbered 01-04) -->
     <div class="skills-strip reveal">
       <div class="skill">
@@ -622,14 +622,14 @@
         <div class="name">Art Direction</div>
       </div>
     </div>
- 
+
     <!-- Experience -->
     <div class="section-head reveal experience-head">
       <div class="num">02.1 · Experience</div>
       <h2><span class="roman">Sixteen years,</span> <span class="acc">condensed.</span></h2>
       <div class="caption">Most recent first · 11 roles</div>
     </div>
- 
+
     <div class="exp-row">
       <div class="year">2025 — Present</div>
       <div>
@@ -638,7 +638,7 @@
       </div>
       <div class="desc">Designing user experiences for an AI-driven optimization platform that autonomously fine-tunes the full technology stack — from infrastructure to application layers. I translate complex performance data into interfaces that empower CTOs, performance engineers, SREs, DevOps, and FinOps teams to act with confidence.</div>
     </div>
- 
+
     <div class="exp-row">
       <div class="year">2024 — 2025</div>
       <div>
@@ -647,7 +647,7 @@
       </div>
       <div class="desc">Led the end-to-end design of an AI-based service that helps buyers compare client and supplier contractual documents — reducing manual errors, accelerating contract analysis, and surfacing deviations and risks.</div>
     </div>
- 
+
     <div class="exp-row">
       <div class="year">2024 — 2025</div>
       <div>
@@ -656,7 +656,7 @@
       </div>
       <div class="desc">Collaborated with PhD Giulia Longo to transform complex engineering data into engaging visual materials for scientific dissemination — bridging technical data and public understanding.</div>
     </div>
- 
+
     <div class="exp-row">
       <div class="year">2024</div>
       <div>
@@ -665,7 +665,7 @@
       </div>
       <div class="desc">Led the redesign of a public EV charging app. Conducted user research, redefined information architecture, and shipped a cleaner layout that measurably improved usability in real-world charging scenarios.</div>
     </div>
- 
+
     <div class="exp-row">
       <div class="year">2023 — 2024</div>
       <div>
@@ -674,7 +674,7 @@
       </div>
       <div class="desc">Delivered end-to-end design for an internal dashboard used by the client's team. Translated in-depth user research into a more efficient, day-to-day tool.</div>
     </div>
- 
+
     <!-- Hidden rows toggled by button -->
     <div class="exp-hidden" id="expHidden">
       <div class="exp-row">
@@ -685,7 +685,7 @@
         </div>
         <div class="desc">Organized complex technical information for scientific dissemination — translating engineering solutions into compelling narratives for public and professional audiences.</div>
       </div>
- 
+
       <div class="exp-row">
         <div class="year">2020 — 2022</div>
         <div>
@@ -694,7 +694,7 @@
         </div>
         <div class="desc">Assistant to the Marketing Manager. Modernised the visual identity alongside the design team and led marketing project management for a heritage equestrian brand.</div>
       </div>
- 
+
       <div class="exp-row">
         <div class="year">2018 — 2020</div>
         <div>
@@ -703,7 +703,7 @@
         </div>
         <div class="desc">At the Milan Aesthetic Research Center — part of the branding team elevating Huawei's and Honor's branding, industrial design, websites, and packaging.</div>
       </div>
- 
+
       <div class="exp-row">
         <div class="year">2015 — 2018</div>
         <div>
@@ -712,7 +712,7 @@
         </div>
         <div class="desc">On the design team of Europe's top online personal shopping service. Boosted brand recognition and improved the whole customer experience through simple, eye-catching photography and cross-department collaboration.</div>
       </div>
- 
+
       <div class="exp-row">
         <div class="year">2014 — 2015</div>
         <div>
@@ -721,7 +721,7 @@
         </div>
         <div class="desc">A marketplace for designers and makers. Started on e-commerce redesign, moved into rebranding, then curated and produced visual content across the website, marketing, and campaigns.</div>
       </div>
- 
+
       <div class="exp-row">
         <div class="year">2012 — 2014</div>
         <div>
@@ -731,18 +731,18 @@
         <div class="desc">Co-founded a design studio dedicated to sustainability — exploring eco-friendly materials, exhibiting at fairs. Led brand management and online marketing for small businesses.</div>
       </div>
     </div>
- 
+
     <div style="grid-column: 1 / -1; display: flex; justify-content: center; padding: 32px 0;">
       <button class="exp-toggle" id="expToggle" data-cursor="hover">Show 6 more roles ↓</button>
     </div>
- 
+
     <!-- Education -->
     <div class="section-head reveal edu-head">
       <div class="num">02.2 · Education</div>
       <h2><span class="roman">Where I</span> <span class="acc">learned.</span></h2>
       <div class="caption">2 institutions · Italy</div>
     </div>
- 
+
     <div class="exp-row">
       <div class="year">2022</div>
       <div>
@@ -751,7 +751,7 @@
       </div>
       <div class="desc">Master programme focused on contemporary UI/UX practice. Studied under Mirko Santangelo, Gaia Zuccaro, Andrea Caperni, Pietro Gregorioni, Raffaele Boiano.</div>
     </div>
- 
+
     <div class="exp-row">
       <div class="year">2007 — 2012</div>
       <div>
@@ -762,7 +762,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">
@@ -781,7 +781,7 @@
     </div>
   </div>
 </footer>
- 
+
 <!-- ============================================
      SCRIPTS
      ============================================ -->
@@ -794,7 +794,7 @@
     function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
   }
- 
+
   // Custom cursor
   const cursor = document.getElementById('cursor');
   let cx=innerWidth/2, cy=innerHeight/2, tx=cx, ty=cy;
@@ -805,12 +805,12 @@
     requestAnimationFrame(tick);
   }
   tick();
- 
+
   document.querySelectorAll('[data-cursor]').forEach(el => {
     el.addEventListener('mouseenter', () => cursor.classList.add(el.dataset.cursor));
     el.addEventListener('mouseleave', () => cursor.classList.remove('hover','drag'));
   });
- 
+
   // Hero reveal
   window.addEventListener('load', () => {
     setTimeout(() => {
@@ -818,13 +818,13 @@
       document.getElementById('hero').classList.add('in');
     }, 200);
   });
- 
+
   // Reveal on scroll
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
- 
+
   // Kinetic rail — drag + inertia + tilt
   const rail = document.getElementById('rail');
   let isDown=false, startX=0, scrollStart=0, velocity=0, lastX=0, lastT=0, raf2=null, railX=0;
@@ -860,7 +860,7 @@
   rail.addEventListener('touchstart', e => { isDown=true; startX=e.touches[0].clientX; scrollStart=railX; });
   rail.addEventListener('touchmove',  e => { if (!isDown) return; setRail(scrollStart + (e.touches[0].clientX - startX)); });
   rail.addEventListener('touchend', () => { isDown=false; });
- 
+
   // Card tilt based on horizontal position
   setInterval(() => {
     const wrap = rail.parentElement.getBoundingClientRect();
@@ -871,7 +871,7 @@
       if (!card.matches(':hover')) card.style.transform = `rotate(${tilt.toFixed(2)}deg)`;
     });
   }, 80);
- 
+
   // Experience expand
   const expToggle = document.getElementById('expToggle');
   const expHidden = document.getElementById('expHidden');
@@ -879,7 +879,7 @@
     const open = expHidden.classList.toggle('open');
     expToggle.textContent = open ? 'Show fewer roles ↑' : 'Show 6 more roles ↓';
   });
- 
+
   // Anchor smooth
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
@@ -888,6 +888,6 @@
     });
   });
 </script>
- 
+
 </body>
 </html>
