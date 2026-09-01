@@ -1,3 +1,5 @@
+
+Index v2 · HTML
 <!doctype html>
 <html lang="en">
 <head>
@@ -27,6 +29,11 @@
   --paper:#EEE8DA; --stone:#8A857A;
   --acid:#D4FF00; --blue:#4A6BFF;
   --spark:#EEF680;        /* logo star — set to var(--acid) for a single lime */
+ 
+  /* client strip — the two knobs. --logo-scale multiplies every logo's own
+     optical height (they are NOT all the same height by design). */
+  --logo-scale:1.22;
+  --logo-gap:clamp(88px,12vw,192px);
   --mu:rgba(238,232,218,.60);
  
   --display:'Bricolage Grotesque', system-ui, sans-serif;
@@ -163,7 +170,9 @@ h1 em{
  
 /* meta trio */
 .facts{
-  display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(20px,3vw,44px);
+  /* the middle column carries the longest value, so it gets more room —
+     keeps all three on a single line from 1280 up */
+  display:grid; grid-template-columns:1fr 1.7fr 1fr; gap:clamp(20px,3vw,44px);
   padding-top:clamp(20px,2.4vw,30px); border-top:1px solid var(--line);
 }
 .fact .k{
@@ -178,20 +187,19 @@ h1 em{
 .fact:nth-child(3) .v{ color:var(--acid) }
  
 /* ── brand marquee ────────────────────────────────────── */
-.brands{ border-top:1px solid var(--line); padding:clamp(18px,2.2vw,26px) 0 clamp(20px,2.4vw,28px); position:relative; z-index:2 }
+.brands{ padding:clamp(18px,2.2vw,26px) 0 clamp(20px,2.4vw,28px); position:relative; z-index:2 }
 .brands .bh{
   padding:0 var(--pad); margin-bottom:clamp(14px,1.8vw,20px);
   display:flex; align-items:center; gap:14px;
   font-family:var(--mono); font-size:10.5px; letter-spacing:.20em;
   text-transform:uppercase; color:var(--stone);
 }
-.brands .bh .rule{ flex:1; height:1px; background:var(--line) }
 .mq-view{
   overflow:hidden; padding:5px 0;
   -webkit-mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
           mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 }
-.mq{ display:flex; width:max-content; animation:mq 40s linear infinite }
+.mq{ display:flex; width:max-content; animation:mq 80s linear infinite }
 .brands:hover .mq{ animation-play-state:paused }
 /* 4 copies, shifted by exactly one copy (25% of the track) — one set must be
    wider than the viewport or the strip would run dry mid-loop. */
@@ -200,10 +208,10 @@ h1 em{
 /* spacing lives on the item, not the flex gap — that keeps translateX(-50%) seamless */
 .logo{
   color:var(--paper); opacity:.52; line-height:0; flex:none;
-  margin-right:clamp(34px,4.6vw,68px);
+  margin-right:var(--logo-gap);
   transition:opacity .3s, transform .3s var(--ease-spring);
 }
-.logo svg{ height:var(--h); width:auto }
+.logo svg{ height:calc(var(--h) * var(--logo-scale)); width:auto }
 .logo:hover{ opacity:1; transform:translateY(-3px) }
  
 @media (prefers-reduced-motion:reduce){
@@ -232,7 +240,7 @@ h1 em{
   h1{ font-size:clamp(34px,4.4vw,54px) }
   .hero{ gap:13px }
   .facts{ display:none }
-  .logo svg{ height:calc(var(--h) * .82) }
+  :root{ --logo-scale:1.0 }
 }
  
 /* ── responsive ───────────────────────────────────────── */
@@ -259,8 +267,7 @@ h1 em{
   .fact .v{ font-size:18.5px }
   .brands{ padding:14px 0 16px }
   .brands .bh{ margin-bottom:12px }
-  .logo svg{ height:calc(var(--h) * .76) }
-  .logo{ margin-right:28px }
+  :root{ --logo-scale:.95; --logo-gap:72px }
 }
 </style>
 </head>
@@ -281,10 +288,11 @@ h1 em{
 <div class="cur-dot"  id="curDot"  aria-hidden="true"></div>
  
 <header>
+  <a class="mark" href="/" aria-label="Damiano Meneghetti — home" data-cur>
     <span class="dm" aria-hidden="true">D<svg class="spark" viewBox="0 0 24 24"><path d="M12 1.2 Q13.6 10.4 22.8 12 Q13.6 13.6 12 22.8 Q10.4 13.6 1.2 12 Q10.4 10.4 12 1.2 Z" fill="currentColor"/></svg>M</span>
     <span class="sr">Damiano Meneghetti</span>
   </a>
-  <a class="pill" href="mailto:damiano.meneghetti@akamas.io" data-cur>Start a project ↗</a>
+  <a class="pill" href="mailto:meneghettidamiano@gmail.com" data-cur>Start a project ↗</a>
 </header>
  
 <main class="hero">
@@ -301,8 +309,8 @@ h1 em{
  
   <div class="hero-row">
     <p class="lede">
-     I turn <b>technical<b> <b>complexity<b> into <b>digital<b> <b>clarity<b> leading design initiatives
-      for global brands with a balance of <b>product<b> <b>strategy<b> and <b>visual<b> <b>precision<b>.
+      I turn <b>technical complexity into digital clarity</b>, leading design initiatives
+      for global brands with a balance of <b>product strategy and visual precision</b>.
     </p>
     <div class="hero-cta">
       <a href="https://www.linkedin.com/in/damianomeneghetti/" target="_blank" rel="noopener" class="pill" data-cur>Connect ↗</a>
@@ -327,7 +335,7 @@ h1 em{
 </main>
  
 <section class="brands" aria-label="Selected brands">
-  <p class="bh"><span>Selected brands</span><span class="rule"></span></p>
+  <p class="bh"><span>Selected brands</span></p>
   <div class="mq-view">
     <div class="mq">
       <ul class="mq-set">
