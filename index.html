@@ -1,227 +1,315 @@
-/* ═══════════════════════════════════════════════════════════
-   Holo tokens, same names as the Figma variables
-   ═══════════════════════════════════════════════════════════ */
-:root{
-  color-scheme:dark;
-  --paper-100:#F2EDE3; --paper-200:#E9E2D4;
-  --ink-900:#14141B;   --ink-800:#1E1E27; --ink-700:#34343F;
-  --brown-900:#161514; --brown-700:#3A3633;
-  --sand-400:#ABA8A2;  --sand-300:#D2CCC1;
-  --red-600:#B8321A;   --lime-400:#D7FF3A;
-  --holo-orange:#FF8A3D; --holo-pink:#FF5FA2; --holo-violet:#8F6BFF;
-  --holo-yellow:#FFE27A; --holo-cyan:#8FE9FF;
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Damiano Meneghetti, product designer</title>
+<meta name="description" content="I turn complicated software into intuitive experiences, without losing what makes it powerful.">
+<meta name="theme-color" content="#14141B">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1.2 Q13.6 10.4 22.8 12 Q13.6 13.6 12 22.8 Q10.4 13.6 1.2 12 Q10.4 10.4 12 1.2 Z' fill='%23D4FF00'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>.logos img{display:block;width:clamp(68px,22cqw,122px);height:auto}</style>
+</head>
+<body>
 
-  --display:'Bricolage Grotesque', system-ui, sans-serif;
-  --serif:'Instrument Serif', Georgia, serif;
-  --body:'Instrument Sans', system-ui, sans-serif;
+<header class="bar">
+  <nav aria-label="Main">
+    <a class="dm" href="#top" aria-label="Damiano Meneghetti, home">D<svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.2 Q13.6 10.4 22.8 12 Q13.6 13.6 12 22.8 Q10.4 13.6 1.2 12 Q10.4 10.4 12 1.2 Z" fill="currentColor"/></svg>M</a>
+    <span class="links"><a class="link" href="#contact">Contact</a></span>
+  </nav>
+</header>
 
-  --frame:24px;                         /* ink gap around every canvas */
-  --radius-canvas:48px;
-  --gutter:clamp(24px, 11.25vw, 216px); /* 216px at 1920 */
-  --line:rgba(242,237,227,.22);         /* one color for every divider */
-  --line-on-light:rgba(20,20,27,.22);   /* the same divider over the light nebula */
-  --ease:cubic-bezier(.16,1,.3,1);
-  --spring:cubic-bezier(.34,1.56,.64,1);
+<main class="stack" id="top">
+
+  <!-- HERO: the nebula is drawn live in the canvas -->
+  <section class="hero canvas nebula" aria-labelledby="h-hero" data-seed="0">
+    <canvas aria-hidden="true"></canvas>
+    <div class="hero-text">
+      <h1 id="h-hero" class="display">Complex problems, <span class="serif">clear</span> thinking</h1>
+      <p class="lede">I turn complicated software into intuitive experiences, without losing what makes it powerful.</p>
+      <div class="cta-row">
+        <a class="pill lime" href="https://www.linkedin.com/in/damianomeneghetti/" target="_blank" rel="noopener">Connect</a>
+        <a class="pill on-light" href="https://www.behance.net/dem" target="_blank" rel="noopener">See projects <span class="arr" aria-hidden="true">↗</span></a>
+      </div>
+      <div class="facts">
+        <div class="fact"><span class="k">Currently</span><span class="v">Senior UX Designer at Akamas.io</span></div>
+        <div class="fact"><span class="k">Specialties</span><span class="v">Product Design, UX, Branding and Art Direction</span></div>
+        <div class="fact"><span class="k">Experience</span><span class="v">16 years of design practice</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT + WHAT I BRING -->
+  <section class="about canvas" aria-labelledby="h-hi">
+    <div class="hi">
+      <div class="portrait"><img src="assets/portrait.jpg" onerror="this.remove()" alt="Portrait of Damiano Meneghetti" loading="lazy" width="560" height="640"></div>
+      <div class="hi-text">
+        <h2 id="h-hi" class="display">Hi, I’m <span class="serif">Damiano</span></h2>
+        <div class="copy">
+          <p>I'm a multidisciplinary designer from Venice, Italy, with 16 years of experience across digital products, branding, fashion and industrial design.</p>
+          <p>After a decade shaping brands and physical products, I moved into digital experiences. Since then, I've been untangling complexity in EV mobility, AI-powered tools and, most recently, Kubernetes optimization at Akamas.</p>
+        </div>
+      </div>
+    </div>
+    <div class="bring">
+      <h3 class="display">What I bring</h3>
+      <div class="caps">
+        <div class="cap"><h4>UX research</h4><p class="principle">Evidence before opinions</p><p>Interviews, usability tests and field research. I challenge assumptions with evidence, not personal preferences.</p></div>
+        <div class="cap"><h4>Product design</h4><p class="principle">From concept to shipped product</p><p>I turn complex workflows into intuitive experiences, working closely with engineering from early exploration to implementation.</p></div>
+        <div class="cap"><h4>Design systems</h4><p class="principle">One rule, everywhere</p><p>I build reusable components and shared design principles that keep products consistent as they evolve.</p></div>
+        <div class="cap"><h4>Branding &amp; Art Direction</h4><p class="principle">Brand and product as one system</p><p>I connect visual identity and digital experiences, bringing years of branding and art direction into product design.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUSTED BY -->
+  <section class="trusted canvas grid" aria-labelledby="h-trusted">
+    <h2 id="h-trusted" class="display">Trusted <span class="serif">by</span></h2>
+    <ul class="logos" aria-label="Clients">
+      <li><img src="assets/logos/Accenture.svg" alt="Accenture" width="122" height="122"></li>
+      <li><img src="assets/logos/Stellantis.svg" alt="Stellantis" width="122" height="122"></li>
+      <li><img src="assets/logos/F2M.svg" alt="Free2move" width="122" height="122"></li>
+      <li><img src="assets/logos/REPLY.svg" alt="Reply" width="122" height="122"></li>
+      <li><img src="assets/logos/ENI.svg" alt="Eni" width="122" height="122"></li>
+      <li><img src="assets/logos/Autostrade.svg" alt="Autostrade per l’Italia" width="122" height="122"></li>
+      <li><img src="assets/logos/Huawei.svg" alt="Huawei" width="122" height="122"></li>
+      <li><img src="assets/logos/Honor.svg" alt="Honor" width="122" height="122"></li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact canvas nebula" id="contact" aria-labelledby="h-contact" data-seed="37">
+    <canvas aria-hidden="true"></canvas>
+    <h2 id="h-contact">Let’s <b>talk</b></h2>
+    <div class="cta-row">
+      <a class="pill lime" href="mailto:meneghettidamiano@gmail.com">Email me</a>
+      <a class="pill on-light" href="https://www.linkedin.com/in/damianomeneghetti/" target="_blank" rel="noopener">Connect</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>© 2026 Damiano Meneghetti</span>
+  <span>Projects, Practice, Archive, Contact</span>
+</footer>
+
+<script>
+(() => {
+'use strict';
+/* The nebula: a light, moving water reflection behind the hero and the contact section.
+     idle    the lights drift on slow orbits, the surface keeps flowing
+     hover   the main light follows the pointer
+     click   a ripple runs through it                                   */
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const VERT = 'attribute vec2 p; void main(){ gl_Position = vec4(p,0.,1.); }';
+const COPY = 'precision mediump float; uniform sampler2D uTex; uniform vec2 uRes; void main(){ gl_FragColor = texture2D(uTex, gl_FragCoord.xy/uRes); }';
+const FRAG = `
+precision highp float;
+uniform vec2 uRes; uniform float uScale, uTime, uHover;
+uniform vec2 uL1, uL2;
+uniform vec4 uWave[3];
+uniform sampler2D uPrev;
+uniform float uMix;
+
+float hash(vec2 p){ p = fract(p*vec2(123.34,456.21)); p += dot(p,p+45.32); return fract(p.x*p.y); }
+float noise(vec2 p){ vec2 i=floor(p), f=fract(p); f=f*f*(3.-2.*f);
+  return mix(mix(hash(i),hash(i+vec2(1,0)),f.x), mix(hash(i+vec2(0,1)),hash(i+vec2(1,1)),f.x), f.y); }
+float fbm(vec2 p){ float v=0., a=.5; mat2 m=mat2(1.6,1.2,-1.2,1.6);
+  for(int i=0;i<5;i++){ v+=a*noise(p); p=m*p; a*=.5; } return v; }
+float caustic(vec2 w, float t){
+  float m1  = fbm(w*1.1 + vec2(t*.05,-t*.03));
+  float m2  = fbm(w*1.7 + vec2(-t*.04, t*.06) + 3.1);
+  float i1  = abs(fract(m1*3.2 + t*.03) - .5);
+  float i2  = abs(fract(m2*2.6 - t*.025) - .5);
+  float s1  = smoothstep(.5,0.,i1), s2 = smoothstep(.5,0.,i2);
+  return pow(s1,18.) + .7*pow(s2,22.) + .12*pow(max(s1,s2),4.);
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  background:var(--ink-900); color:var(--paper-100);
-  font-family:var(--body); font-size:18px; line-height:1.45;
-  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-  padding:calc(81px + var(--frame)) var(--frame) var(--frame);
+
+void main(){
+  vec2 frag = gl_FragCoord.xy;
+  vec2 p  = frag/uScale;
+  vec2 L1 = uL1/uScale, L2 = uL2/uScale;
+  float t = uTime;
+
+  for(int i=0;i<3;i++){ vec4 w=uWave[i]; if(w.w<.5) continue;
+    vec2 dv=p-w.xy/uScale; float d=length(dv), r=w.z*.8;
+    float band=exp(-pow((d-r)*6.,2.))*exp(-w.z*1.3);
+    p += (dv/(d+1e-4))*band*.06; }
+
+  vec2 cc = vec2(.5*uRes.x/uScale,.5*uRes.y/uScale);
+  float rot = t*.018; p = cc + mat2(cos(rot),-sin(rot),sin(rot),cos(rot))*(p-cc);
+
+  vec2 d1v=p-L1; float d1=length(d1v);
+  float sw=(.35+1.2*uHover)*exp(-d1*d1*2.);
+  p = L1 + mat2(cos(sw),-sin(sw),sin(sw),cos(sw))*d1v;
+  d1v=p-L1; d1=length(d1v);
+  vec2 d2v=p-L2; float d2=length(d2v);
+
+  vec2 q = vec2(fbm(p*.7+vec2(0.,t*.04)), fbm(p*.7+vec2(5.2,1.3)-t*.035));
+  vec2 w = p + 1.6*q;
+  float n = fbm(w*1.1 + vec2(t*.03,-t*.02));
+
+  vec3 pink=vec3(1.,.52,.66), peach=vec3(1.,.70,.50), lav=vec3(.74,.60,1.),
+       sky=vec3(.42,.66,1.), deep=vec3(.16,.16,.55);
+  vec3 base = mix(lav, pink, smoothstep(.30,.70,n));
+  base = mix(base, peach, smoothstep(.45,.85,q.x)*.8);
+  base = mix(base, sky,   smoothstep(.55,.85,q.y)*.6);
+  float pool = smoothstep(.60,.82,fbm(w*1.6+4.))*(1.-exp(-min(d1,d2)*2.2));
+  pool *= mix(.20, 1., smoothstep(.15,.65, frag.x/uRes.x));
+  base = mix(base, deep, pool*.8);
+
+  float ang = t*.03 + q.x*1.5; vec2 dir = vec2(cos(ang),sin(ang));
+  float fib = noise(vec2(dot(p,dir)*3., dot(p,vec2(-dir.y,dir.x))*240.));
+  base *= .97 + .05*fib;
+
+  vec3 col = mix(base, vec3(1.), .14);
+
+  float near = exp(-d1*1.1)*.95 + exp(-d2*1.3)*.75 + .08;
+  float side = mix(.40, 1., smoothstep(.15,.65, frag.x/uRes.x));
+  near *= side * mix(.35, 1., smoothstep(.0,.38, frag.y/uRes.y));
+  vec3 caus = vec3(caustic(w+vec2(-.012), t), caustic(w, t), caustic(w+vec2(.012), t));
+  col += caus*near*(1.15+.65*uHover)*vec3(1.,.92,.98);
+
+  float arc = 1. - smoothstep(0., .012, abs(q.x-.52));
+  col += arc*exp(-min(d1,d2)*1.5)*vec3(1.,.90,.86)*1.3*side;
+
+  float a1=atan(d1v.y,d1v.x), a2=atan(d2v.y,d2v.x);
+  float pulse = 1. + .18*sin(t*1.1) + .08*sin(t*2.7);
+  col += vec3(1.,.97,.96)*(exp(-d1*16.)*(2.2+uHover)*pulse + exp(-d1*4.)*(.38+.35*uHover));
+  col += vec3(1.,.95,.96)*(exp(-d2*18.)*1.7 + exp(-d2*4.5)*.30);
+  col += vec3(1.,.90,.92)*( pow(noise(vec2(a1*5.+t*.08,1.3)),3.)*exp(-d1*2.)*(.75+.6*uHover)
+                           + pow(noise(vec2(a2*5.-t*.07,7.1)),3.)*exp(-d2*2.4)*.5 );
+
+  vec3 rainbow = .5 + .5*cos(6.2832*(d1*2.5 - t*.05 + vec3(0.,.33,.67)));
+  col += rainbow*exp(-abs(d1-.35)*10.)*.24;
+
+  vec2 vu = frag/uRes - .5;
+  col = mix(col*.82, col, smoothstep(.95,.32,length(vu*vec2(1.,1.2))));
+
+  float luma = dot(col, vec3(.299,.587,.114));
+  col = max(mix(vec3(luma), col, 1.35), 0.);
+  col = 1. - exp(-col*1.3);
+
+  vec2 uv  = frag/uRes;
+  vec2 asp = vec2(uRes.x/uRes.y, 1.);
+  vec2 c   = uL1/uRes;
+  vec2 rel = (uv - c)*asp;
+  float zr = .010 + .012*uHover;
+  float ra = .0025*sin(t*.4);
+  rel = mat2(cos(ra),-sin(ra),sin(ra),cos(ra))*rel*(1.-zr);
+  vec3 prev = texture2D(uPrev, c + rel/asp).rgb;
+  col = mix(prev, col, uMix);
+
+  col += (hash(frag+t)-.5)*(3./255.);
+  gl_FragColor = vec4(col,1.);
+}`;
+
+function nebula(section){
+  const cv=section.querySelector('canvas');
+  const seed=+section.dataset.seed||0;
+  const gl=cv.getContext('webgl',{antialias:false,alpha:false,depth:false,stencil:false});
+  const link=(vs,fs)=>{ const sh=(type,src)=>{ const s=gl.createShader(type); gl.shaderSource(s,src); gl.compileShader(s); return s; };
+    const p=gl.createProgram(); gl.attachShader(p,sh(gl.VERTEX_SHADER,vs)); gl.attachShader(p,sh(gl.FRAGMENT_SHADER,fs)); gl.linkProgram(p);
+    return gl.getProgramParameter(p,gl.LINK_STATUS)?p:null; };
+  let prog=null, copy=null; const U={}, C={};
+  if (gl){ prog=link(VERT,FRAG); copy=link(VERT,COPY); }
+  if (prog && copy){
+    gl.bindBuffer(gl.ARRAY_BUFFER,gl.createBuffer());
+    gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+    ['uRes','uScale','uTime','uHover','uL1','uL2','uWave','uPrev','uMix'].forEach(n=>U[n]=gl.getUniformLocation(prog,n));
+    ['uTex','uRes'].forEach(n=>C[n]=gl.getUniformLocation(copy,n));
+  } else {
+    prog=null;
+    cv.style.background='radial-gradient(40% 50% at 55% 25%, #fff6f2 0%, rgba(238,196,178,.9) 18%, transparent 60%), radial-gradient(45% 45% at 50% 80%, rgba(255,240,236,.9), transparent 60%), linear-gradient(160deg,#9aa3c0,#d7a9a4 45%,#5a6486)';
+  }
+  const use=p=>{ gl.useProgram(p); const loc=gl.getAttribLocation(p,'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0); };
+
+  let tex=[], fb=[], cur=0, fresh=true;
+  function targets(){
+    tex.forEach(t=>gl.deleteTexture(t)); fb.forEach(f=>gl.deleteFramebuffer(f)); tex=[]; fb=[];
+    for(let i=0;i<2;i++){
+      const t=gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D,t);
+      gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,cv.width,cv.height,0,gl.RGBA,gl.UNSIGNED_BYTE,null);
+      gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
+      const f=gl.createFramebuffer(); gl.bindFramebuffer(gl.FRAMEBUFFER,f);
+      gl.framebufferTexture2D(gl.FRAMEBUFFER,gl.COLOR_ATTACHMENT0,gl.TEXTURE_2D,t,0);
+      tex.push(t); fb.push(f);
+    }
+    gl.bindFramebuffer(gl.FRAMEBUFFER,null); fresh=true;
+  }
+
+  let W=0,H=0,DPR=1,RES=.6, mx=0,my=0, live=false,lastMove=-1e9,hover=0, l1x=0,l1y=0,l2x=0,l2y=0;
+  const waves=[], wbuf=new Float32Array(12);
+
+  function resize(){
+    const r=section.getBoundingClientRect(); W=r.width; H=r.height;
+    DPR=Math.min(devicePixelRatio||1,1.5); RES=W>1600?.5:W>900?.6:.75;
+    cv.width=Math.max(1,Math.round(W*DPR*RES)); cv.height=Math.max(1,Math.round(H*DPR*RES));
+    if (prog){ gl.viewport(0,0,cv.width,cv.height); targets(); }
+    if (!l1x){ l1x=W*.6; l1y=H*.28; l2x=W*.72; l2y=H*.58; }
+    if (REDUCED) render(6);
+  }
+  section.addEventListener('pointermove',e=>{ const r=section.getBoundingClientRect(); mx=e.clientX-r.left; my=e.clientY-r.top; live=true; lastMove=performance.now(); if(REDUCED) render(6); },{passive:true});
+  section.addEventListener('pointerleave',()=>{ live=false; },{passive:true});
+  section.addEventListener('pointerdown',e=>{ const r=section.getBoundingClientRect(); waves.push({x:e.clientX-r.left,y:e.clientY-r.top,t0:performance.now()/1000}); if(waves.length>3) waves.shift(); },{passive:true});
+
+  function render(tt){
+    if (!prog) return;
+    const t=tt+seed, k=DPR*RES;
+    const active=live && performance.now()-lastMove<2600;
+    hover+=((active?1:0)-hover)*.045;
+    const i1x=W*(.62+.20*Math.sin(t*.13)), i1y=H*(.34+.16*Math.sin(t*.26+1.1));
+    const i2x=W*(.72+.14*Math.sin(t*.11+2.3)), i2y=H*(.58+.12*Math.sin(t*.15+.4));
+    l1x+=((active?mx:i1x)-l1x)*.05; l1y+=((active?my:i1y)-l1y)*.05;
+    l2x+=(i2x-l2x)*.03; l2y+=(i2y-l2y)*.03;
+    wbuf.fill(0);
+    waves.forEach((w,i)=>{ const age=tt-w.t0; if(age<3) wbuf.set([w.x*k,(H-w.y)*k,age,1],i*4); });
+
+    use(prog);
+    gl.bindFramebuffer(gl.FRAMEBUFFER,fb[cur]);
+    gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D,tex[1-cur]);
+    gl.uniform1i(U.uPrev,0);
+    gl.uniform1f(U.uMix,(fresh||REDUCED)?1.:.14);
+    gl.uniform2f(U.uRes,cv.width,cv.height); gl.uniform1f(U.uScale,Math.min(cv.width,cv.height));
+    gl.uniform1f(U.uTime,t); gl.uniform1f(U.uHover,hover);
+    gl.uniform2f(U.uL1,l1x*k,(H-l1y)*k); gl.uniform2f(U.uL2,l2x*k,(H-l2y)*k);
+    gl.uniform4fv(U.uWave,wbuf); gl.drawArrays(gl.TRIANGLES,0,3);
+    use(copy);
+    gl.bindFramebuffer(gl.FRAMEBUFFER,null);
+    gl.bindTexture(gl.TEXTURE_2D,tex[cur]);
+    gl.uniform1i(C.uTex,0); gl.uniform2f(C.uRes,cv.width,cv.height);
+    gl.drawArrays(gl.TRIANGLES,0,3);
+    cur=1-cur; fresh=false;
+  }
+
+  let visible=false, raf=0;
+  const loop=now=>{ render(now/1000); raf=visible?requestAnimationFrame(loop):0; };
+  new IntersectionObserver(([e])=>{ visible=e.isIntersecting; if(visible&&!raf&&!REDUCED) raf=requestAnimationFrame(loop); }).observe(section);
+  let rt; addEventListener('resize',()=>{ clearTimeout(rt); rt=setTimeout(resize,120); });
+  resize();
 }
-a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
-::selection{background:var(--holo-pink);color:var(--ink-900)}
-:focus-visible{outline:2px solid var(--holo-cyan); outline-offset:4px; border-radius:6px}
+document.querySelectorAll('.nebula').forEach(nebula);
 
-.display{font-family:var(--display); font-weight:700; font-variation-settings:'opsz' 14; letter-spacing:-.035em}
-.serif{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacing:-.01em}
-
-/* red 48px grid, only behind canvases */
-.grid{
-  background-image:
-    linear-gradient(to right, rgba(184,50,26,.13) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(184,50,26,.13) 1px, transparent 1px);
-  background-size:48px 48px;
-}
-.canvas{ position:relative; border-radius:var(--radius-canvas); overflow:hidden }
-.stack > * + *{ margin-top:var(--frame) }
-
-/* ── header: the pill bar, fixed while scrolling ────────── */
-.bar{
-  position:fixed; top:0; left:0; right:0; z-index:50; height:81px; padding-top:24px;
-  display:flex; justify-content:center; align-items:flex-start; pointer-events:none;
-}
-.bar nav{
-  pointer-events:auto; display:flex; align-items:center; gap:32px;
-  padding:8px 32px; border-radius:18px;
-  background:rgba(20,20,27,.80); border:1px solid #2B2B37;
-  -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px);
-}
-.dm{ font-family:var(--serif); font-size:36px; line-height:26px; height:26px; color:#fff; display:inline-flex; align-items:center }
-.spark{ width:8px; height:8px; margin:0 4px 0 5px; color:#D4FF00; transition:transform .55s var(--spring) }
-.dm:hover .spark{ transform:rotate(90deg) scale(1.25) }
-.bar .links{ display:flex; gap:2px; padding:0; border-radius:12px; background:rgba(238,232,218,.05) }
-.bar .link{
-  font-size:14.5px; line-height:23px; padding:8px 15px; border-radius:9px;
-  color:rgba(238,232,218,.60); transition:color .2s, background-color .2s;
-}
-.bar .link:hover{ color:#EEE8DA; background:rgba(238,232,218,.08) }
-
-/* ── CTAs (CTA / Pill, CTA / Link) ──────────────────────
-   hover    lifts 2px, fills with ink, light text, soft shadow
-            (same on primary and secondary, so they read as one family)
-   pressed  sinks back and scales to 96%, a black fill
-   click    a soft ripple spreads from the pointer             */
-.pill{
-  position:relative; overflow:hidden; isolation:isolate;
-  display:inline-flex; align-items:center; justify-content:center; gap:8px;
-  font:600 18px/1.25 var(--body); padding:18px 32px; border-radius:999px;
-  border:1.5px solid transparent; cursor:pointer; white-space:nowrap; user-select:none;
-  transition:transform .35s var(--spring), box-shadow .3s var(--ease),
-             background-color .2s var(--ease), color .2s, border-color .2s;
-}
-.pill:hover{ transform:translateY(-2px) }
-.pill:active, .pill.is-pressed{ transform:translateY(0) scale(.96); transition-duration:.08s }
-.pill .arr{ display:inline-block; transition:transform .3s var(--spring) }
-.pill:hover .arr{ transform:translate(2px,-2px) }
-
-.pill.lime{ background:var(--lime-400); color:var(--brown-900) }
-.pill.lime{ border-color:var(--lime-400) }
-.pill.lime:hover{ border-color:var(--ink-900); background:var(--ink-900); color:var(--paper-100); box-shadow:0 12px 32px -12px rgba(20,20,27,.55) }
-.pill.lime:active, .pill.lime.is-pressed{ border-color:#000; background:#000; color:var(--paper-100) }
-
-.pill.on-dark{ border-color:rgba(242,237,227,.85); color:var(--paper-100); background:transparent }
-.pill.on-dark:hover{ border-color:var(--paper-100); background:var(--paper-100); color:var(--brown-900); box-shadow:0 12px 32px -12px rgba(0,0,0,.5) }
-.pill.on-dark:active, .pill.on-dark.is-pressed{ border-color:#D9D2C5; background:#D9D2C5; color:var(--brown-900) }
-
-.pill.on-light{ border-color:var(--ink-900); color:var(--ink-900); background:transparent }
-.pill.on-light:hover{ border-color:var(--ink-900); background:var(--ink-900); color:var(--paper-100); box-shadow:0 12px 32px -12px rgba(20,20,27,.55) }
-.pill.on-light:active, .pill.on-light.is-pressed{ border-color:#000; background:#000; color:var(--paper-100) }
-
-.pill.primary{ background:var(--brown-900); color:var(--paper-100) }
-.pill.primary:hover{ background:var(--brown-700); box-shadow:0 12px 32px -12px rgba(0,0,0,.6) }
-.pill.primary:active, .pill.primary.is-pressed{ background:#000 }
-
-.pill.secondary{ border-color:var(--brown-900); color:var(--brown-900) }
-.pill.secondary:hover{ background:rgba(22,21,20,.08) }
-.pill.secondary:active, .pill.secondary.is-pressed{ background:rgba(22,21,20,.16) }
-
-.ripple{
-  position:absolute; z-index:-1; border-radius:50%; pointer-events:none;
-  width:12px; height:12px; margin:-6px 0 0 -6px; background:currentColor; opacity:.28;
-  transform:scale(0); animation:ripple .6s var(--ease) forwards;
-}
-@keyframes ripple{ to{ transform:scale(28); opacity:0 } }
-
-.tlink{
-  font:600 18px/1.25 var(--body); color:var(--lime-400); padding:4px 0; white-space:nowrap;
-  display:inline-flex; gap:6px; align-items:center;
-  background:linear-gradient(currentColor,currentColor) left 100% / 0 1.5px no-repeat;
-  transition:background-size .35s var(--ease), opacity .15s;
-}
-.tlink .arr{ display:inline-block; transition:transform .3s var(--spring) }
-.tlink:hover{ background-size:100% 1.5px }
-.tlink:hover .arr{ transform:translateX(4px) }
-.tlink:active{ opacity:.6 }
-.tlink:active .arr{ transform:translateX(1px) }
-
-.bar .link:active{ transform:scale(.96) }
-.dm:active .spark{ transform:rotate(180deg) scale(.9) }
-
-/* ── hero ────────────────────────────────────────────────── */
-.nebula{ isolation:isolate }
-.hero{ min-height:min(954px, calc(100svh - 81px - var(--frame))); display:flex; align-items:center; padding:120px var(--gutter) 140px; isolation:isolate }
-.nebula canvas{ position:absolute; inset:0; width:100%; height:100%; z-index:-3; display:block }
-.hero-text{ width:100%; display:flex; flex-direction:column; gap:44px; color:var(--ink-900) }
-.cta-row{ display:flex; gap:16px; flex-wrap:wrap }
-.hero h1{ font-size:clamp(56px, 6.67vw, 128px); line-height:.94; letter-spacing:-.035em; max-width:730px }
-.hero h1 .serif{ letter-spacing:-.01em }
-.hero p.lede{ font-size:clamp(18px,1.25vw,24px); line-height:1.45; max-width:663px }
-.facts{ display:grid; grid-template-columns:repeat(3,1fr); gap:32px }
-.fact{ padding-top:20px; display:flex; flex-direction:column; gap:6px }
-.fact:not(:last-child){ border-right:1px solid var(--line-on-light) }
-.fact .k{ font-size:15px; font-weight:600 }
-.fact .v{ font-size:17px; line-height:1.35 }
-
-/* ── about + what I bring ───────────────────────────────── */
-.about{ padding:120px var(--gutter) 120px }
-.hi{ display:flex; align-items:center; gap:120px }
-.portrait{
-  flex:none; width:min(560px,42vw); aspect-ratio:560/640; overflow:hidden;
-  border-radius:24px 280px 24px 280px; background:var(--ink-800);
-}
-.portrait img{ width:100%; height:100%; object-fit:cover; object-position:50% 22%; color:transparent }
-.hi-text{ display:flex; flex-direction:column; gap:32px; min-width:0 }
-.hi-text h2{ font-size:clamp(56px,6.25vw,120px); line-height:.92 }
-.hi-text h2 .serif{ display:block }
-.hi-text .copy{ display:flex; flex-direction:column; gap:16px; font-size:clamp(18px,1.25vw,24px); color:var(--sand-300) }
-.bring{ margin-top:160px }
-.bring h3{ font-size:clamp(44px,3.75vw,72px); line-height:1; letter-spacing:-.035em; margin-bottom:56px }
-.caps{ display:grid; grid-template-columns:repeat(4,1fr) }
-.cap{ padding:16px 24px 16px 0; display:flex; flex-direction:column; gap:16px }
-.cap + .cap{ border-left:1px solid var(--line); padding-left:24px }
-.cap h4{ font-family:var(--display); font-weight:700; font-variation-settings:'opsz' 14; font-size:clamp(28px,1.9vw,36px); line-height:1.1; letter-spacing:-.035em }
-.cap .principle{ font-family:var(--serif); font-style:italic; font-size:26px; line-height:1.15 }
-.cap p:last-child{ font-size:18px; color:var(--sand-300) }
-
-/* ── trusted by (paper canvas) ──────────────────────────── */
-.trusted{ background-color:var(--paper-100); color:var(--brown-900); padding:120px var(--gutter) 140px }
-.trusted h2{ font-size:clamp(80px,9.4vw,180px); line-height:.94 }
-.trusted{ container-type:inline-size }
-/* 8 logos: one row of 8 on a full-width screen, otherwise two rows of 4.
-   Rows are always full, so no logo is ever left alone on a line, and the
-   first and last column line up with the text edges. */
-.logos{ margin-top:64px; display:grid; grid-template-columns:repeat(8,auto); justify-content:space-between; align-items:center }
-@media (max-width:1600px){ .logos{ grid-template-columns:repeat(4,auto); row-gap:8px } }
-.logos svg{ display:block; width:clamp(68px, 22cqw, 122px); height:auto }
-.logos li{ list-style:none; line-height:0 }
-.logos svg > g{ transition:opacity .25s }
-.logos li:hover svg > g{ opacity:1 }
-
-/* ── kind words ─────────────────────────────────────────── */
-.kind{ padding:160px var(--gutter) 120px }
-.kind-head{ display:flex; align-items:center; gap:64px; justify-content:space-between }
-.kind h2{ font-size:clamp(80px,9.4vw,180px); line-height:.9 }
-.quotes{ margin-top:64px; display:grid; grid-template-columns:1fr 1fr; gap:80px }
-.quotes blockquote{ font-family:var(--serif); font-style:italic; font-size:clamp(26px,2vw,38px); line-height:1.25 }
-.quotes figcaption{ margin-top:20px; display:flex; flex-direction:column; gap:4px }
-.quotes .who{ font-weight:600 }
-.quotes .role{ font-size:16px; color:var(--sand-400) }
-
-/* ── contact (holographic canvas) ───────────────────────── */
-.contact{ min-height:568px; display:flex; flex-direction:column; justify-content:center; padding:120px var(--gutter) 140px; color:var(--ink-900) }
-.contact h2{ font-family:var(--serif); font-style:italic; font-weight:400; font-size:clamp(110px,12.5vw,240px); line-height:.86; letter-spacing:-.012em }
-.contact h2 b{ font-family:var(--display); font-style:normal; font-weight:700; font-variation-settings:'opsz' 14; letter-spacing:-.041em }
-.contact .cta-row{ margin-top:40px }
-
-footer{ display:flex; justify-content:space-between; gap:24px; padding:24px var(--gutter) 0; font-size:16px; color:var(--sand-400) }
-
-/* ── responsive ─────────────────────────────────────────── */
-@media (max-width:1100px){
-  .hi{ flex-direction:column; align-items:flex-start; gap:56px }
-  .portrait{ width:min(560px,100%) }
-  .caps{ grid-template-columns:1fr 1fr; row-gap:40px }
-  .cap:nth-child(3){ border-left:0; padding-left:0 }
-  .quotes{ grid-template-columns:1fr; gap:56px }
-  .kind-head{ flex-direction:column; align-items:flex-start; gap:24px }
-}
-@media (max-width:640px){
-  :root{ --frame:12px; --radius-canvas:32px }
-  .hero{ padding:96px 24px 72px }
-  .facts{ grid-template-columns:1fr; gap:0 }
-  .fact:not(:last-child){ border-right:0 }
-  .caps{ grid-template-columns:1fr }
-  .cap + .cap{ border-left:0; padding-left:0; border-top:1px solid var(--line); padding-top:28px }
-  .about,.kind,.trusted{ padding-left:24px; padding-right:24px }
-  .contact{ padding:96px 24px; min-height:0 }
-  footer{ flex-direction:column }
-}
-@media (prefers-reduced-motion:reduce){ *{ transition-duration:.001s !important; scroll-behavior:auto } .ripple{ display:none } .pill:hover{ transform:none } }
-
-/* keep content clear of phone system bars */
-.bar{ padding-top:calc(24px + env(safe-area-inset-top, 0px)) }
-html{ scroll-padding-top:calc(105px + env(safe-area-inset-top, 0px)) }
-body{ padding-bottom:calc(var(--frame) + env(safe-area-inset-bottom, 0px)) }
+/* CTA click: ripple from the pointer, and a pressed state that also works on touch and keyboard */
+document.querySelectorAll('.pill').forEach(el=>{
+  const press=on=>el.classList.toggle('is-pressed',on);
+  el.addEventListener('pointerdown',e=>{
+    press(true);
+    if (REDUCED) return;
+    const r=el.getBoundingClientRect(), dot=document.createElement('span');
+    dot.className='ripple'; dot.style.left=(e.clientX-r.left)+'px'; dot.style.top=(e.clientY-r.top)+'px';
+    el.appendChild(dot); dot.addEventListener('animationend',()=>dot.remove());
+  });
+  ['pointerup','pointerleave','pointercancel','blur'].forEach(ev=>el.addEventListener(ev,()=>press(false)));
+  el.addEventListener('keydown',e=>{ if(e.key===' '||e.key==='Enter') press(true); });
+  el.addEventListener('keyup',()=>press(false));
+});
+})();
+</script>
+</body>
+</html>
